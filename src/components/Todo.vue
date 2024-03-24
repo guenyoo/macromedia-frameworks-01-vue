@@ -6,7 +6,7 @@ const { name, id, completed } = defineProps<TodoProps>();
 </script>
 
 <template>
-  <div>
+  <div class="grid grid-flow-col auto-cols-max gap-4">
     <input
       type="checkbox"
       :id="id"
