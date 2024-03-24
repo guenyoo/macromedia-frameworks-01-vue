@@ -26,10 +26,11 @@ function toggleCompletedTodos(id: string) {
 function createNewTodo() {
   const newTodos = [
     ...todos.value,
-    { name: inputText, id: uuidv4(), completed: false },
+    { name: inputText.value, id: uuidv4(), completed: false },
   ];
 
   todos.value = newTodos;
+  inputText.value = '';
 }
 
 function archiveTodo(id: string) {
