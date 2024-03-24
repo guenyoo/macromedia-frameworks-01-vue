@@ -6,7 +6,7 @@ const { name, id, completed } = defineProps<TodoProps>();
 </script>
 
 <template>
-  <div class="grid grid-flow-col auto-cols-max gap-4">
+  <div class="grid grid-flow-col auto-cols-max gap-4 place-items-center">
     <input
       type="checkbox"
       :id="id"
@@ -15,6 +15,8 @@ const { name, id, completed } = defineProps<TodoProps>();
       @change="$emit('toggleCompleted', id)"
     />
     <label :for="id">{{ name }}</label>
-    <ArchiveIcon class="size-5" />
+    <button @click="$emit('archiveTodo', id)">
+      <ArchiveIcon class="size-5" />
+    </button>
   </div>
 </template>

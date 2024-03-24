@@ -7,7 +7,7 @@ interface TodoList {
 }
 const { todoList, name } = defineProps<TodoList>();
 
-defineEmits(['toggleCompleted']);
+defineEmits(['toggleCompleted', 'archiveTodo']);
 </script>
 
 <template>
@@ -20,6 +20,7 @@ defineEmits(['toggleCompleted']);
         :id="todo.id"
         :completed="todo.completed"
         @toggleCompleted="$emit('toggleCompleted', todo.id)"
+        @archiveTodo="$emit('archiveTodo', todo.id)"
       />
     </li>
   </ul>
